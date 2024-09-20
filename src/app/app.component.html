@@ -1,0 +1,82 @@
+<div class="container text-center app-main-text app-background">
+  <div class="row justify-content-center p-2 mt-4">
+    <div class="col-lg-4">
+      <div *ngIf="numerosDigitados.length > 0 && habilitarJogo">
+        <label class="fs-3 fw-semibold">Tentivas anteriores</label>
+        <div class="d-flex gap-2 align-items-center">
+          <span
+            class="app-background p-2 rounded"
+            *ngFor="let numero of numerosDigitados"
+            >{{ numero }}</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 ">
+      <h1 class="mb-5 app-logo">Jogo da advinhação!</h1>
+      <h3 class="fw-semibold">Tentativas: {{ tentativas }}</h3>
+      <p class="fw-semibold">Pontos: {{ pontos }}</p>
+      <p class="fw-semibold">{{ mensagem }}</p>
+
+      <hr />
+      <div *ngIf="!habilitarJogo">
+        <label class="fw-semibold fs-5 mt-3">Selecione uma Dificuldade</label>
+        <select class="form-select app-input" [(ngModel)]="dificuldade">
+          <option disabled selected>Selecione uma dificuldade</option>
+          <option value="facil">Facil, Tentativas: 15, Numeros: 50</option>
+          <option value="medio">Medio, Tentativas: 10, Numeros: 70</option>
+          <option value="dificil">Dificil, Tentativas: 5, Numeros: 100</option>
+        </select>
+        <button class="btn btn-primary col-6 mt-2 app-buttons border-0" (click)="gerarDificuldade()">
+          Selecionar
+        </button>
+      </div>
+
+      <main
+        class="row-cols-3 d-flex py-4 align-items-center bg-warning-subtitle rounded"
+        *ngIf="habilitarJogo"
+      >
+        <label class="fs-2 fw-semibold">{{ dicaNumeroMaior }} | </label>
+        <div class="d-flex flex-column gap-2 mt-5">
+          <input
+            type="number"
+            class="text-center fs-4 fw-bold app-input"
+            min="1"
+            max="{{ numeros }}"
+            [(ngModel)]="numeroDigitado"
+          />
+          <button
+            *ngIf="!jogoFinalizado"
+            class="btn btn-primary app-buttons border-0"
+            (click)="advinhar()"
+          >
+            Advinhar
+          </button>
+
+          <button
+            *ngIf="jogoFinalizado"
+            class="btn btn-primary app-buttons border-0"
+            (click)="reiniciar()"
+          >
+            Reiniciar
+          </button>
+        </div>
+        <label class="fs-2 fw-semibold"> | {{ dicaNumeroMenor }}</label>
+      </main>
+    </div>
+    <div class="col-lg-4">
+      <div *ngIf="numerosDigitados.length > 0 && habilitarJogo">
+        <label class="fs-3 fw-semibold">Ranking de pontuacoes</label>
+        <div class="mt-2 justify-content-center">
+          <span
+            class="d-block mx-auto col-5 app-background p-2 mb-2 rounded"
+            *ngFor="let item of ranking"
+            >Dificuldade: {{ item.Dificuldade }} Pontos:
+            {{ item.Pontuacao }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

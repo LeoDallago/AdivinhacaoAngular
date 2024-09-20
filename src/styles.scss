@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+$color-primary: #bd5d38;
+$color-secondary: bisque;
+
+body{
+  background-color: $color-secondary;
+}
+
+.app-main-text{
+  font-family: Jost;
+}
+
+.app-background{
+  color: $color-secondary;
+  background-color: $color-primary;
+  border-radius: 10px ;
+}
+
+.app-logo{
+  background-color: $color-secondary;
+  color: $color-primary;
+  border-radius: 10px ;
+  padding: 5px;
+}
+
+
+.app-buttons{
+  color: $color-secondary;
+  background-color: $color-primary;
+
+  &:hover{
+    color: $color-primary;
+    background-color: $color-secondary;
+  }
+}
+
+.app-input{
+  background-color: $color-secondary;
+  color: $color-primary;
+  border: none;
+  border-radius: 5px;
+}
