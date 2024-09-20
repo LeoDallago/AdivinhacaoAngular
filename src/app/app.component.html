@@ -5,7 +5,7 @@
         <label class="fs-3 fw-semibold">Tentivas anteriores</label>
         <div class="d-flex gap-2 align-items-center">
           <span
-            class="app-background p-2 rounded"
+            class="app-ranking p-2 rounded-5"
             *ngFor="let numero of numerosDigitados"
             >{{ numero }}</span
           >
@@ -24,9 +24,9 @@
         <label class="fw-semibold fs-5 mt-3">Selecione uma Dificuldade</label>
         <select class="form-select app-input" [(ngModel)]="dificuldade">
           <option disabled selected>Selecione uma dificuldade</option>
-          <option value="facil">Facil, Tentativas: 15, Numeros: 50</option>
-          <option value="medio">Medio, Tentativas: 10, Numeros: 70</option>
-          <option value="dificil">Dificil, Tentativas: 5, Numeros: 100</option>
+          <option value="facil">Facil, Tentativas: 10, Numeros: 30</option>
+          <option value="medio">Médio, Tentativas: 5, Numeros: 50</option>
+          <option value="dificil">Dificil, Tentativas: 3, Numeros: 70</option>
         </select>
         <button class="btn btn-primary col-6 mt-2 app-buttons border-0" (click)="gerarDificuldade()">
           Selecionar
@@ -70,7 +70,7 @@
         <label class="fs-3 fw-semibold">Ranking de pontuacoes</label>
         <div class="mt-2 justify-content-center">
           <span
-            class="d-block mx-auto col-5 app-background p-2 mb-2 rounded"
+            class="d-block mx-auto col-5 app-ranking p-2 mb-2 rounded"
             *ngFor="let item of ranking"
             >Dificuldade: {{ item.Dificuldade }} Pontos:
             {{ item.Pontuacao }}</span

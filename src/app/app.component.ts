@@ -8,7 +8,6 @@ import { Ranking } from "./Models/ranking";
   standalone: true,
   imports: [FormsModule, NgIf, NgForOf],
   templateUrl: "app.component.html",
-  styleUrl: "./app.component.scss"
 })
 export class AppComponent {
   public dicaNumeroMaior: number = 1;
@@ -77,16 +76,7 @@ export class AppComponent {
 
   gerarDificuldade(): void {
     if (this.dificuldade == "facil") {
-      this.numeros = 50;
-      this.dicaNumeroMenor = this.numeros;
-      this.dicaNumeroMaior = 1;
-      this.numeroDigitado = 1;
-      this.numeroSecreto = Math.floor(Math.random() * this.numeros) + 1;
-      this.habilitarJogo = true;
-      this.pontos = 100;
-      this.tentativas = 15;
-    } else if (this.dificuldade == "medio") {
-      this.numeros = 70;
+      this.numeros = 30;
       this.dicaNumeroMenor = this.numeros;
       this.dicaNumeroMaior = 1;
       this.numeroDigitado = 1;
@@ -94,8 +84,9 @@ export class AppComponent {
       this.habilitarJogo = true;
       this.pontos = 100;
       this.tentativas = 10;
-    } else if (this.dificuldade == "dificil") {
-      this.numeros = 100;
+    }
+    else if (this.dificuldade == "medio") {
+      this.numeros = 50;
       this.dicaNumeroMenor = this.numeros;
       this.dicaNumeroMaior = 1;
       this.numeroDigitado = 1;
@@ -103,6 +94,16 @@ export class AppComponent {
       this.habilitarJogo = true;
       this.pontos = 100;
       this.tentativas = 5;
+    }
+    else if (this.dificuldade == "dificil") {
+      this.numeros = 70;
+      this.dicaNumeroMenor = this.numeros;
+      this.dicaNumeroMaior = 1;
+      this.numeroDigitado = 1;
+      this.numeroSecreto = Math.floor(Math.random() * this.numeros) + 1;
+      this.habilitarJogo = true;
+      this.pontos = 100;
+      this.tentativas = 3;
     }
   }
 

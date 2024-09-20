@@ -2,11 +2,17 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-$color-primary: #bd5d38;
+/*$color-primary: #bd5d38;
 $color-secondary: bisque;
+$blush: #d34f73ff;  nao usadas*/
+
+$burnt-sienna: #db7f67ff;
+$tan: #dbbea1ff;
+$cinereous: #a37b73ff;
+$van-dyke: #3f292bff;
 
 body{
-  background-color: $color-secondary;
+  background-color: $tan;
 }
 
 .app-main-text{
@@ -14,32 +20,35 @@ body{
 }
 
 .app-background{
-  color: $color-secondary;
-  background-color: $color-primary;
+  color: $tan;
+  background-color: $burnt-sienna;
   border-radius: 10px ;
 }
 
 .app-logo{
-  background-color: $color-secondary;
-  color: $color-primary;
+  background-color: $tan;
+  color: $van-dyke;
   border-radius: 10px ;
   padding: 5px;
 }
 
-
 .app-buttons{
-  color: $color-secondary;
-  background-color: $color-primary;
+  color: $van-dyke;
+  background-color: $tan;
 
   &:hover{
-    color: $color-primary;
-    background-color: $color-secondary;
+    color: $tan;
+    background-color: $van-dyke;
   }
 }
 
 .app-input{
-  background-color: $color-secondary;
-  color: $color-primary;
+  background-color: $tan;
+  color: $van-dyke;
   border: none;
   border-radius: 5px;
+}
+
+.app-ranking{
+  background-color: $van-dyke;
 }
