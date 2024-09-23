@@ -102,7 +102,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "",
+            "baseHref": "https://leodallago.github.io/AdivinhacaoAngular/",
             "repo": "https://github.com/LeoDallago/AdivinhacaoAngular.git"
           }
         }
